@@ -2,7 +2,15 @@
 {
     internal sealed class Youki : IBuhin
     {
-        private List<IBuhin> _buhins = new List<IBuhin>(); 
+        private List<IBuhin> _buhins = new List<IBuhin>();
+
+        public Youki(string name)
+        {
+            Name = name;
+        }
+
+        public string Name { get; }
+
         public void Execute()
         {
             MessageBox.Show("容器です。");
@@ -16,6 +24,11 @@
         public void Add(IBuhin buhin)
         {
             _buhins.Add(buhin);
+        }
+
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }

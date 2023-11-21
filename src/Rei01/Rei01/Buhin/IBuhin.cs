@@ -2,6 +2,7 @@
 {
     internal interface IBuhin
     {
+        string Name { get; }
         void Execute();
     }
 }
