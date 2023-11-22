@@ -3,6 +3,8 @@
     internal interface IBuhin
     {
         string Name { get; }
+        int Level { get; }
+
         void Execute();
     }
 }

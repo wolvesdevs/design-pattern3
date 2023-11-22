@@ -4,12 +4,14 @@
     {
         private List<IBuhin> _buhins = new List<IBuhin>();
 
-        public Youki(string name)
+        public Youki(string name, int level)
         {
             Name = name;
+            Level = level;
         }
 
         public string Name { get; }
+        public int Level { get; }
 
         public void Execute()
         {
@@ -28,7 +30,7 @@
 
         public override string ToString()
         {
-            return Name;
+            return string.Concat(Enumerable.Repeat("+", Level)) + Name;
         }
     }
 }
