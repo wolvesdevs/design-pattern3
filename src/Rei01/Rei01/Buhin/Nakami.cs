@@ -2,12 +2,14 @@
 {
     internal sealed class Nakami : IBuhin
     {
-        public Nakami(string name)
+        public Nakami(string name, int level)
         {
             Name = name;
+            Level = level;
         }
 
         public string Name { get; }
+        public int Level { get; }
 
         public void Execute()
         {
@@ -16,7 +18,7 @@
 
         public override string ToString()
         {
-            return Name;
+            return string.Concat(Enumerable.Repeat("+", Level)) + Name;
         }
     }
 }
