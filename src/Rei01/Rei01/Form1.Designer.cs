@@ -34,11 +34,12 @@
             // 
             // listBox1
             // 
+            listBox1.Font = new Font("Caslex Mono JP", 9F, FontStyle.Regular, GraphicsUnit.Point);
             listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 25;
+            listBox1.ItemHeight = 24;
             listBox1.Location = new Point(55, 42);
             listBox1.Name = "listBox1";
-            listBox1.Size = new Size(319, 254);
+            listBox1.Size = new Size(319, 244);
             listBox1.TabIndex = 0;
             // 
             // button1

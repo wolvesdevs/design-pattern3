@@ -12,16 +12,17 @@ namespace Rei01
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var youkiAAA = new Youki("AAA");
-            var nakamiAAA1 = new Nakami("AAA1");
-            var nakamiAAA2 = new Nakami("AAA2");
-            var youkiBBB = new Youki("BBB");
-            var nakamiBBBA1 = new Nakami("BBBA1");
-            var nakamiBBBA2 = new Nakami("BBBA2");
-            var nakamiBBBA3 = new Nakami("BBBA3");
+            var youkiAAA = new Youki("AAA", 0);
+            var nakamiAAA1 = new Nakami("AAA1", 1);
+            var nakamiAAA2 = new Nakami("AAA2", 1);
 
-            var youkiCCC = new Youki("CCC");
-            var nakamiCCC1 = new Nakami("CCC1");
+            var youkiBBB = new Youki("BBB", 1);
+            var nakamiBBBA1 = new Nakami("BBBA1", 2);
+            var nakamiBBBA2 = new Nakami("BBBA2", 2);
+            var nakamiBBBA3 = new Nakami("BBBA3", 2);
+            
+            var youkiCCC = new Youki("CCC", 0);
+            var nakamiCCC1 = new Nakami("CCC1", 1);
 
             youkiAAA.Add(nakamiAAA1);
             youkiAAA.Add(nakamiAAA2);
@@ -47,7 +48,7 @@ namespace Rei01
             var buhin = listBox1.SelectedItem as IBuhin;
 
             if (buhin == null)
-            { 
+            {
                 return;
             }
 
