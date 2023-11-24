@@ -1,17 +1,19 @@
-﻿namespace Rei01.Buhin
+﻿using Rei01.Buhin.Data;
+
+namespace Rei01.Buhin
 {
     internal sealed class Youki : IBuhin
     {
         private List<IBuhin> _buhins = new List<IBuhin>();
+        private KaisouEntity _entity;
 
-        public Youki(string name, int level)
+        public Youki(KaisouEntity enitty)
         {
-            Name = name;
-            Level = level;
+            _entity = enitty;
         }
 
-        public string Name { get; }
-        public int Level { get; }
+        public string Name => _entity.Name;
+        public int Level => _entity.Level;
 
         public void Execute()
         {
