@@ -1,15 +1,18 @@
-﻿namespace Rei01.Buhin
+﻿using Rei01.Buhin.Data;
+
+namespace Rei01.Buhin
 {
     internal sealed class Nakami : IBuhin
     {
-        public Nakami(string name, int level)
+        private KaisouEntity _entity;
+
+        public Nakami(KaisouEntity entity)
         {
-            Name = name;
-            Level = level;
+            _entity = entity;
         }
 
-        public string Name { get; }
-        public int Level { get; }
+        public string Name => _entity.Name;
+        public int Level => _entity.Level;
 
         public void Execute()
         {
