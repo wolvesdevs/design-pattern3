@@ -5,6 +5,8 @@ namespace Rei01
 {
     public partial class Form1 : Form
     {
+        private List<IBuhin> _buhins = new List<IBuhin>();
+
         public Form1()
         {
             InitializeComponent();
@@ -21,7 +23,7 @@ namespace Rei01
             //var nakamiBBBA1 = new Nakami("BBBA1", 2);
             //var nakamiBBBA2 = new Nakami("BBBA2", 2);
             //var nakamiBBBA3 = new Nakami("BBBA3", 2);
-            
+
             //var youkiCCC = new Youki("CCC", 0);
             //var nakamiCCC1 = new Nakami("CCC1", 1);
 
@@ -48,13 +50,20 @@ namespace Rei01
             {
                 if (entity.Kind == 1)
                 {
-                    listBox1.Items.Add(new Youki(entity));
+                    _buhins.Add(new Youki(entity));
                 }
                 else if (entity.Kind == 2)
                 {
-                    listBox1.Items.Add(new Nakami(entity));
+                    _buhins.Add(new Nakami(entity));
                 }
             }
+
+            foreach (var buhin in _buhins)
+            {
+                var parent = _buhins.Find(x => x.Id == buhin.ParentId);
+            }
+
+            listBox1.DataSource = _buhins;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -2,6 +2,8 @@
 {
     internal interface IBuhin
     {
+        int Id { get; }
+        int ParentId { get; }
         string Name { get; }
         int Level { get; }
 
