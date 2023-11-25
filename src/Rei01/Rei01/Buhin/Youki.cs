@@ -12,8 +12,11 @@ namespace Rei01.Buhin
             _entity = enitty;
         }
 
+        public int Id => _entity.Id;
+        public int ParentId => _entity.ParentId;
         public string Name => _entity.Name;
         public int Level => _entity.Level;
+
 
         public void Execute()
         {
