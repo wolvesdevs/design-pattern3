@@ -61,6 +61,11 @@ namespace Rei01
             foreach (var buhin in _buhins)
             {
                 var parent = _buhins.Find(x => x.Id == buhin.ParentId);
+
+                if (parent != null)
+                {
+                    parent.Add(buhin);
+                }
             }
 
             listBox1.DataSource = _buhins;
