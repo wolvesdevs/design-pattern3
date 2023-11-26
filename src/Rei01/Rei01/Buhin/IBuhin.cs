@@ -8,5 +8,6 @@
         int Level { get; }
 
         void Execute();
+        void Add(IBuhin buhin);
     }
 }
