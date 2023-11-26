@@ -13,7 +13,7 @@
             result.Add(new KaisouEntity(201, 20, 2, 1, "B1"));
             result.Add(new KaisouEntity(202, 20, 2, 1, "B2"));
 
-            result.Add(new KaisouEntity(30, 20, 1, 1, "CCC"));
+            result.Add(new KaisouEntity(30, 20, 2, 1, "CCC"));
             result.Add(new KaisouEntity(301, 30, 2, 2, "C1"));
             result.Add(new KaisouEntity(302, 30, 2, 2, "C2"));
 

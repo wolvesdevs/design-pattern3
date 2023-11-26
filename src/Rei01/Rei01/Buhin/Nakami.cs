@@ -23,7 +23,7 @@ namespace Rei01.Buhin
 
         public void Add(IBuhin buhin)
         {
-            throw new ArgumentException($"NakamiにAddはできません Id={Id}");
+            throw new NakamiAddException(Id);
         }
 
         public override string ToString()
