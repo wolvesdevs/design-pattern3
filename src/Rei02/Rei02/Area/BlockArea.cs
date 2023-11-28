@@ -4,7 +4,7 @@
     {
         public List<AreaBase> _areas = new List<AreaBase>();
 
-        public BlockArea(string name): base(name)
+        public BlockArea(string name) : base(name)
         {
         }
 
