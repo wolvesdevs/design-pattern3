@@ -1,16 +1,22 @@
-﻿namespace Rei02.Area
+﻿
+namespace Rei02.Area
 {
     internal sealed class BlockArea : AreaBase
     {
         public List<AreaBase> _areas = new List<AreaBase>();
 
-        public BlockArea(string name): base(name)
+        public BlockArea(string name) : base(name)
         {
         }
 
         public override void Add(AreaBase area)
         {
             _areas.Add(area);
+        }
+
+        public override IEnumerable<AreaBase> GetChildren()
+        {
+            return _areas;
         }
     }
 }
