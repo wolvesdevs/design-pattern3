@@ -1,4 +1,5 @@
-﻿namespace Rei02.Area
+﻿
+namespace Rei02.Area
 {
     internal sealed class BlockArea : AreaBase
     {
@@ -11,6 +12,11 @@
         public override void Add(AreaBase area)
         {
             _areas.Add(area);
+        }
+
+        public override IEnumerable<AreaBase> GetChildren()
+        {
+            return _areas;
         }
     }
 }

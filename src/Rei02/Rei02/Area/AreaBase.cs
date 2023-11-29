@@ -10,5 +10,6 @@
         public string Name { get; }
 
         public abstract void Add(AreaBase area);
+        public abstract IEnumerable<AreaBase> GetChildren();
     }
 }
