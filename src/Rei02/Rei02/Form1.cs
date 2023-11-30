@@ -54,5 +54,51 @@ namespace Rei02
                 AddNode(child, node);
             }
         }
+
+        private void AlarmButton_Click(object sender, EventArgs e)
+        {
+            var area = treeView1.SelectedNode.Tag as AreaBase;
+
+            if (area == null)
+            {
+                MessageBox.Show("’nˆæ‚ð‘I‘ð‚µ‚Ä‚­‚¾‚³‚¢");
+                return;
+            }
+
+            area.Alarm();
+            SetImage();
+        }
+
+        private void SetImage()
+        {
+            foreach (TreeNode node in treeView1.Nodes)
+            {
+                SetImageMethod(node);
+            }
+        }
+
+        private void SetImageMethod(TreeNode node)
+        {
+            var area = node.Tag as AreaBase;
+
+            if (area != null)
+            {
+                if (area.GetCondition() == Condition.Alarm)
+                {
+                    node.ImageIndex = 1;
+                    node.SelectedImageIndex = 1;
+                }
+                else
+                {
+                    node.ImageIndex = 0;
+                    node.SelectedImageIndex = 0;
+                }
+            }
+
+            foreach(TreeNode child in node.Nodes)
+            {
+                SetImageMethod(child);
+            } 
+        }
     }
 }

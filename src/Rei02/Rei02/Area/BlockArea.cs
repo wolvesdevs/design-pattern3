@@ -18,5 +18,22 @@ namespace Rei02.Area
         {
             return _areas;
         }
+
+        public override void Alarm()
+        {
+            throw new ArgumentException("一括警報設定はできません。");
+        }
+
+        public override Condition GetCondition()
+        {
+            foreach (var area in _areas)
+            {
+                if (area.GetCondition() == Condition.Alarm)
+                {
+                    return Condition.Alarm;
+                }
+            }
+            return Condition.Normal;
+        }
     }
 }
