@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             treeView1 = new TreeView();
             imageList1 = new ImageList(components);
+            AlarmButton = new Button();
             SuspendLayout();
             // 
             // treeView1
@@ -53,11 +54,22 @@
             imageList1.Images.SetKeyName(0, "green.png");
             imageList1.Images.SetKeyName(1, "red.png");
             // 
+            // AlarmButton
+            // 
+            AlarmButton.Location = new Point(590, 37);
+            AlarmButton.Name = "AlarmButton";
+            AlarmButton.Size = new Size(213, 71);
+            AlarmButton.TabIndex = 1;
+            AlarmButton.Text = "alarm";
+            AlarmButton.UseVisualStyleBackColor = true;
+            AlarmButton.Click += AlarmButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 757);
+            Controls.Add(AlarmButton);
             Controls.Add(treeView1);
             Name = "Form1";
             Text = " ";
@@ -69,5 +81,6 @@
 
         private TreeView treeView1;
         private ImageList imageList1;
+        private Button AlarmButton;
     }
 }
