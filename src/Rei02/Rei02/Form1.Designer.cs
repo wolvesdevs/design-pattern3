@@ -50,8 +50,8 @@
             imageList1.ColorDepth = ColorDepth.Depth8Bit;
             imageList1.ImageStream = (ImageListStreamer)resources.GetObject("imageList1.ImageStream");
             imageList1.TransparentColor = Color.Transparent;
-            imageList1.Images.SetKeyName(0, "g.png");
-            imageList1.Images.SetKeyName(1, "r.png");
+            imageList1.Images.SetKeyName(0, "green.png");
+            imageList1.Images.SetKeyName(1, "red.png");
             // 
             // Form1
             // 
