@@ -24,6 +24,11 @@ namespace Rei02.Area
             _condition = Condition.Alarm;
         }
 
+        public override void Release()
+        {
+            _condition = Condition.Normal;
+        }
+
         public override Condition GetCondition()
         {
             return _condition;
