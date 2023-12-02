@@ -33,6 +33,7 @@
             treeView1 = new TreeView();
             imageList1 = new ImageList(components);
             AlarmButton = new Button();
+            ReleaseButton = new Button();
             SuspendLayout();
             // 
             // treeView1
@@ -64,11 +65,22 @@
             AlarmButton.UseVisualStyleBackColor = true;
             AlarmButton.Click += AlarmButton_Click;
             // 
+            // ReleaseButton
+            // 
+            ReleaseButton.Location = new Point(590, 138);
+            ReleaseButton.Name = "ReleaseButton";
+            ReleaseButton.Size = new Size(213, 71);
+            ReleaseButton.TabIndex = 2;
+            ReleaseButton.Text = "release";
+            ReleaseButton.UseVisualStyleBackColor = true;
+            ReleaseButton.Click += ReleaseButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(826, 757);
+            Controls.Add(ReleaseButton);
             Controls.Add(AlarmButton);
             Controls.Add(treeView1);
             Name = "Form1";
@@ -82,5 +94,6 @@
         private TreeView treeView1;
         private ImageList imageList1;
         private Button AlarmButton;
+        private Button ReleaseButton;
     }
 }

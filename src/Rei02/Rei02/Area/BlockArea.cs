@@ -24,6 +24,14 @@ namespace Rei02.Area
             throw new ArgumentException("一括警報設定はできません。");
         }
 
+        public override void Release()
+        {
+            foreach (var area in _areas)
+            {
+                area.Release();
+            }
+        }
+
         public override Condition GetCondition()
         {
             foreach (var area in _areas)
