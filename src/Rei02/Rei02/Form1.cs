@@ -1,9 +1,12 @@
 using Rei02.Area;
+using Rei02.Data;
 
 namespace Rei02
 {
     public partial class Form1 : Form
     {
+        private List<AreaBase> _areas = new List<AreaBase>();
+
         public Form1()
         {
             InitializeComponent();
@@ -13,24 +16,52 @@ namespace Rei02
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            var k = new BlockArea("関東");
-            var a = new BlockArea("東京");
-            var a1 = new MeasureArea("立川");
-            var a2 = new MeasureArea("三鷹");
+            //var k = new BlockArea("関東");
+            //var a = new BlockArea("東京");
+            //var a1 = new MeasureArea("立川");
+            //var a2 = new MeasureArea("三鷹");
 
-            var s = new BlockArea("四国");
-            var b = new BlockArea("香川");
-            var b1 = new MeasureArea("高松");
+            //var s = new BlockArea("四国");
+            //var b = new BlockArea("香川");
+            //var b1 = new MeasureArea("高松");
 
-            k.Add(a);
-            a.Add(a1);
-            a.Add(a2);
+            //k.Add(a);
+            //a.Add(a1);
+            //a.Add(a2);
 
-            s.Add(b);
-            b.Add(b1);
+            //s.Add(b);
+            //b.Add(b1);
+            var entities = KaisouFake.GetData();
 
-            AddNode(k, null);
-            AddNode(s, null);
+            foreach (var entity in entities)
+            {
+                if (entity.Kind == 1)
+                {
+                    _areas.Add(new BlockArea(entity));
+                }
+                else if (entity.Kind == 2)
+                {
+                    _areas.Add(new MeasureArea(entity));
+                }
+            }
+
+            foreach (var area in _areas)
+            {
+                var parent = _areas.Find(x => x.Id == area.ParentId);
+                if (parent != null)
+                {
+                    parent.Add(area);
+                }
+            }
+
+            //AddNode(k, null);
+            //AddNode(s, null);
+            var roots = _areas.FindAll(x => x.ParentId == 0);
+
+            foreach (var root in roots)
+            {
+                AddNode(root, null);
+            }
 
             treeView1.ExpandAll();
         }
