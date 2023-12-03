@@ -1,11 +1,13 @@
 ﻿
+using Rei02.Data;
+
 namespace Rei02.Area
 {
     internal sealed class BlockArea : AreaBase
     {
         public List<AreaBase> _areas = new List<AreaBase>();
 
-        public BlockArea(string name) : base(name)
+        public BlockArea(KaisouEntity entity) : base(entity)
         {
         }
 
