@@ -16,21 +16,6 @@ namespace Rei02
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //var k = new BlockArea("ŠÖ“Œ");
-            //var a = new BlockArea("“Œ‹ž");
-            //var a1 = new MeasureArea("—§ì");
-            //var a2 = new MeasureArea("ŽO‘é");
-
-            //var s = new BlockArea("Žl‘");
-            //var b = new BlockArea("ì");
-            //var b1 = new MeasureArea("‚¼");
-
-            //k.Add(a);
-            //a.Add(a1);
-            //a.Add(a2);
-
-            //s.Add(b);
-            //b.Add(b1);
             var entities = KaisouFake.GetData();
 
             foreach (var entity in entities)
@@ -43,6 +28,10 @@ namespace Rei02
                 {
                     _areas.Add(new MeasureArea(entity));
                 }
+                else if (entity.Kind == 99)
+                {
+                    _areas.Add(new LargeBlockArea(entity));
+                }
             }
 
             foreach (var area in _areas)
@@ -54,8 +43,6 @@ namespace Rei02
                 }
             }
 
-            //AddNode(k, null);
-            //AddNode(s, null);
             var roots = _areas.FindAll(x => x.ParentId == 0);
 
             if (roots.Count < 1)
