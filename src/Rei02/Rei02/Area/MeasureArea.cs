@@ -13,7 +13,7 @@ namespace Rei02.Area
 
         public override void Add(AreaBase area)
         {
-            throw new NotImplementedException("Addはできません");
+            throw new NotImplementedException($"Addはできません this.Id={Id} arg.Id={area.Id}");
         }
 
         public override IEnumerable<AreaBase> GetChildren()

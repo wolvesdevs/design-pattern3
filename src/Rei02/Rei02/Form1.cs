@@ -58,6 +58,11 @@ namespace Rei02
             //AddNode(s, null);
             var roots = _areas.FindAll(x => x.ParentId == 0);
 
+            if (roots.Count < 1)
+            {
+                throw new Exception("root‚ª‚ ‚è‚Ü‚¹‚ñBB");
+            }
+
             foreach (var root in roots)
             {
                 AddNode(root, null);
