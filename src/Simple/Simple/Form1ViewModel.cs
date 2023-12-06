@@ -5,7 +5,7 @@ namespace Simple
 {
     public class Form1ViewModel : INotifyPropertyChanged
     {
-        private string _label1Text = "defualt";
+        private string _label1Text = "defualt1";
         public string Label1Text
         {
             get { return _label1Text; }
