@@ -12,21 +12,7 @@ namespace Simple
 
         private void GetButton_Click(object sender, EventArgs e)
         {
-            IProduct product;
-
-            if (Program.Kind == 0)
-            {
-                product = new ProductFake();
-            }
-            else if (Program.Kind == 1)
-            {
-                product = new ProductSqlServer();
-            }
-            else
-            {
-                throw new ArgumentException("Invalid kind");
-            }
-
+            IProduct product = Factories.CreateProduct(Program.Kind);
             label1.Text = product.GetData();
         }
     }
