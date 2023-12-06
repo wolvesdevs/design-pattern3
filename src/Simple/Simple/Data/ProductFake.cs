@@ -1,6 +1,6 @@
 ﻿namespace Simple.Data
 {
-    internal sealed class ProductFake
+    internal sealed class ProductFake : IProduct
     {
         public string GetData()
         {
