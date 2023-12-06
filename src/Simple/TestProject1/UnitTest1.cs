@@ -1,4 +1,5 @@
 using Simple;
+using Simple.Data;
 
 namespace TestProject1
 {
@@ -8,11 +9,20 @@ namespace TestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            var vm = new Form1ViewModel();
-            Assert.AreEqual("defualt1", vm.Label1Text);
+            var mock = new ProductMock();
+            var vm = new Form1ViewModel(mock);
+            Assert.AreEqual("--", vm.Label1Text);
 
             vm.GetButtonClick();
-            Assert.AreEqual("fake!!", vm.Label1Text);
+            Assert.AreEqual("AAABBBdesu", vm.Label1Text);
+        }
+    }
+
+    internal sealed class ProductMock : IProduct
+    {
+        public string GetData()
+        {
+            return "AAABBB";
         }
     }
 }

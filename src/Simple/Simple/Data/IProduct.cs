@@ -1,6 +1,6 @@
 ﻿namespace Simple.Data
 {
-    internal interface IProduct
+    public interface IProduct
     {
         string GetData();
     }

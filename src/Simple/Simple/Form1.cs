@@ -4,7 +4,7 @@ namespace Simple
 {
     public partial class Form1 : Form
     {
-        private Form1ViewModel _vm = new Form1ViewModel();
+        private Form1ViewModel _vm = new Form1ViewModel(Factories.CreateProduct(Program.Kind));
 
         public Form1()
         {

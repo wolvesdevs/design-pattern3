@@ -5,7 +5,14 @@ namespace Simple
 {
     public class Form1ViewModel : INotifyPropertyChanged
     {
-        private string _label1Text = "defualt1";
+        private IProduct _product;
+
+        public Form1ViewModel(IProduct product)
+        {
+            _product = product;
+        }
+
+        private string _label1Text = "--";
         public string Label1Text
         {
             get { return _label1Text; }
@@ -20,8 +27,7 @@ namespace Simple
 
         public void GetButtonClick()
         {
-            IProduct product = Factories.CreateProduct(Program.Kind);
-            Label1Text = product.GetData();
+            Label1Text = _product.GetData() + "desu";
         }
     }
 }
