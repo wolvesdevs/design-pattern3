@@ -1,8 +1,8 @@
 ﻿namespace Simple.Data
 {
-    internal static class Factories
+    public static class Factories
     {
-        internal static IProduct CreateProduct(int kind)
+        public static IProduct CreateProduct(int kind)
         {
             if (kind == 0)
             {
