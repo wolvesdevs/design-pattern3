@@ -12,8 +12,16 @@ namespace Simple
 
         private void GetButton_Click(object sender, EventArgs e)
         {
-            var product = new ProductSqlServer();
-            label1.Text = product.GetData();
+            if (Program.Kind == 0)
+            {
+                var product = new ProductFake();
+                label1.Text = product.GetData();
+            }
+            else if (Program.Kind == 1)
+            {
+                var product = new ProductSqlServer();
+                label1.Text = product.GetData();
+            }   
         }
     }
 }
