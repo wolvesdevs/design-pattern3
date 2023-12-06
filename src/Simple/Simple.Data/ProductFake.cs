@@ -1,10 +1,10 @@
 ﻿namespace Simple.Data
 {
-    public sealed class ProductSqlServer
+    internal sealed class ProductFake : IProduct
     {
         public string GetData()
         {
-            return "Data from SQL Server";
+            return "fake!!";
         }
     }
 }
