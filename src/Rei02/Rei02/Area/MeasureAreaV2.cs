@@ -1,13 +1,12 @@
-﻿
-using Rei02.Data;
+﻿using Rei02.Data;
 
 namespace Rei02.Area
 {
-    internal sealed class MeasureArea : AreaBase
+    internal sealed class MeasureAreaV2 : AreaBase
     {
         private Condition _condition = Condition.Normal;
 
-        public MeasureArea(KaisouEntity entity) : base(entity)
+        public MeasureAreaV2(KaisouEntity entity) : base(entity)
         {
         }
 

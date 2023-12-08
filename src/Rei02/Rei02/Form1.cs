@@ -16,21 +16,6 @@ namespace Rei02
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //var k = new BlockArea("関東");
-            //var a = new BlockArea("東京");
-            //var a1 = new MeasureArea("立川");
-            //var a2 = new MeasureArea("三鷹");
-
-            //var s = new BlockArea("四国");
-            //var b = new BlockArea("香川");
-            //var b1 = new MeasureArea("高松");
-
-            //k.Add(a);
-            //a.Add(a1);
-            //a.Add(a2);
-
-            //s.Add(b);
-            //b.Add(b1);
             var entities = KaisouFake.GetData();
 
             foreach (var entity in entities)
@@ -43,6 +28,10 @@ namespace Rei02
                 {
                     _areas.Add(new MeasureArea(entity));
                 }
+                else if (entity.Kind == 99)
+                {
+                    _areas.Add(new LargeBlockArea(entity));
+                }
             }
 
             foreach (var area in _areas)
@@ -54,9 +43,12 @@ namespace Rei02
                 }
             }
 
-            //AddNode(k, null);
-            //AddNode(s, null);
             var roots = _areas.FindAll(x => x.ParentId == 0);
+
+            if (roots.Count < 1)
+            {
+                throw new Exception("rootがありません。。");
+            }
 
             foreach (var root in roots)
             {
