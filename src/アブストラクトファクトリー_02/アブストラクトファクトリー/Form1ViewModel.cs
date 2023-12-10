@@ -29,11 +29,11 @@ namespace アブストラクトファクトリー
 
         public void GetButtonClick()
         {
-            if (_stock.GetStock() < 1)
-            {
-                Label1Text = "在庫なし";
-                return;
-            }
+            //if (_stock.GetStock() < 1)
+            //{
+            //    Label1Text = "在庫なし";
+            //    return;
+            //}
 
             Label1Text = _product.GetData() + "desu";
         }
