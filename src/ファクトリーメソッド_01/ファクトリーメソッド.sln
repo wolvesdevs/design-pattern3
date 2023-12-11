@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ファクトリーメソッド", "ファクトリーメソッド\ファクトリーメソッド.csproj", "{8B6A2EE6-E939-4043-B257-2DC271C4AF86}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ファクトリーメソッド.TestProject1", "ファクトリーメソッド.TestProject1\ファクトリーメソッド.TestProject1.csproj", "{5DDC6218-ABB9-4CC7-A00B-6EDE4F5F294A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B6A2EE6-E939-4043-B257-2DC271C4AF86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B6A2EE6-E939-4043-B257-2DC271C4AF86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B6A2EE6-E939-4043-B257-2DC271C4AF86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B6A2EE6-E939-4043-B257-2DC271C4AF86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DDC6218-ABB9-4CC7-A00B-6EDE4F5F294A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DDC6218-ABB9-4CC7-A00B-6EDE4F5F294A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DDC6218-ABB9-4CC7-A00B-6EDE4F5F294A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DDC6218-ABB9-4CC7-A00B-6EDE4F5F294A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C502A792-3FD0-4F12-BC84-07356E44A49A}
+	EndGlobalSection
+EndGlobal
