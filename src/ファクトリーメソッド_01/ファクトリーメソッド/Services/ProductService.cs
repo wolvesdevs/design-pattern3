@@ -9,6 +9,6 @@ namespace ファクトリーメソッド.Services
 
         }
 
-        protected abstract IProduct FactoryMethod();
+        protected abstract IProduct FactoryMethod(int kind);
     }
 }
