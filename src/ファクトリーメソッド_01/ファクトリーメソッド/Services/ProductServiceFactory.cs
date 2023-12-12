@@ -4,7 +4,7 @@ namespace ファクトリーメソッド.Services
 {
     internal sealed class ProductServiceFactory : ProductService
     {
-        public override IProduct FactoryMethod(int kind)
+        protected override IProduct FactoryMethod(int kind)
         {
             if (kind == 0)
             {
