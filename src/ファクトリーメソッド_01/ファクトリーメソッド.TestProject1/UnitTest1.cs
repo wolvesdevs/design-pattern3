@@ -16,7 +16,7 @@ namespace TestProject1
 
             productMock.Setup(x => x.GetValidDate()).Returns(DateTime.Now.AddHours(1));
             productMock.Setup(x => x.GetData()).Returns("AAABBB");
-            serviceMock.Setup(x => x.FactoryMethod(0)).Returns(productMock.Object);
+            serviceMock.Setup(x => x.FactoryMethod(It.IsAny<int>())).Returns(productMock.Object);
 
             var vm = new Form1ViewModel(serviceMock.Object);
             Assert.AreEqual("--", vm.Label1Text);
