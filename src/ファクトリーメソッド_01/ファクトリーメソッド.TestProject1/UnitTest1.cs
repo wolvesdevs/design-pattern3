@@ -1,5 +1,8 @@
+using Moq;
+using Moq.Protected;
 using ファクトリーメソッド;
 using ファクトリーメソッド.Data;
+using ファクトリーメソッド.Services;
 
 namespace TestProject1
 {
@@ -9,20 +12,19 @@ namespace TestProject1
         [TestMethod]
         public void TestMethod1()
         {
-            var mock = new ProductMock();
-            var vm = new Form1ViewModel(mock);
+            var serviceMock = new Mock<ProductService>();
+            var productMock = new Mock<IProduct>();
+
+            productMock.Setup(x => x.GetValidDate()).Returns(DateTime.Now.AddHours(1));
+            productMock.Setup(x => x.GetData()).Returns("AAABBB");
+            //serviceMock.Setup(x => x.FactoryMethod(It.IsAny<int>())).Returns(productMock.Object);
+            serviceMock.Protected().Setup<IProduct>("FactoryMethod", ItExpr.IsAny<int>()).Returns(productMock.Object);
+
+            var vm = new Form1ViewModel(serviceMock.Object);
             Assert.AreEqual("--", vm.Label1Text);
 
             vm.GetButtonClick();
             Assert.AreEqual("AAABBBdesu", vm.Label1Text);
-        }
-    }
-
-    internal sealed class ProductMock : IProduct
-    {
-        public string GetData()
-        {
-            return "AAABBB";
         }
     }
 }
