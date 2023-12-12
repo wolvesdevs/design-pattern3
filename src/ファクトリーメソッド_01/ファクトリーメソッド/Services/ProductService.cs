@@ -16,6 +16,6 @@ namespace ファクトリーメソッド.Services
             return product;
         }
 
-        protected abstract IProduct FactoryMethod(int kind);
+        public abstract IProduct FactoryMethod(int kind);
     }
 }
