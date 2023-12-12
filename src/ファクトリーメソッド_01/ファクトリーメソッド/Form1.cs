@@ -1,10 +1,11 @@
 using ファクトリーメソッド.Data;
+using ファクトリーメソッド.Services;
 
 namespace ファクトリーメソッド
 {
     public partial class Form1 : Form
     {
-        private Form1ViewModel _vm = new Form1ViewModel(Factories.CreateProduct(Program.Kind));
+        private Form1ViewModel _vm = new Form1ViewModel(new ProductServiceFactory());
 
         public Form1()
         {

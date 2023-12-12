@@ -1,14 +1,15 @@
 ﻿using ファクトリーメソッド.Data;
 using System.ComponentModel;
+using ファクトリーメソッド.Services;
 
 namespace ファクトリーメソッド
 {
     public class Form1ViewModel : INotifyPropertyChanged
     {
-        private IProduct _product;
-        public Form1ViewModel(IProduct product)
+        private ProductService _service;
+        public Form1ViewModel(ProductService service)
         {
-            _product = product;
+            _service = service;
         }
 
         private string _label1Text = "--";
@@ -26,7 +27,8 @@ namespace ファクトリーメソッド
 
         public void GetButtonClick()
         {
-            Label1Text = _product.GetData() + "desu";
+            var product = _service.Create();
+            Label1Text = product.GetData() + "desu";
         }
     }
 }
